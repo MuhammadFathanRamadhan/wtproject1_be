@@ -1,0 +1,14 @@
+{
+  "name": "wtproject1_be",
+  "version": "1.0.0",
+  "description": "apayo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fathan, kahlil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
