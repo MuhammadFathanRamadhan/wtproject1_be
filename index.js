@@ -9,7 +9,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send({
         message: "Server Node.js sudah berjalan!",
-        status: "success"
+        status: "sukses"
     });
 });
 
