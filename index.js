@@ -1,17 +1,29 @@
+require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
+const path = require('path');
+
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// Middleware agar server bisa membaca JSON (penting untuk kirim data dari Flutter)
+// Middleware
+app.use(cors());
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Endpoint percobaan (Bisa diakses dari browser atau Flutter)
+// Routes
 app.get('/', (req, res) => {
     res.send({
         message: "Server Node.js sudah berjalan!",
         status: "sukses"
     });
 });
+
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 // Jalankan server
 app.listen(PORT, () => {
