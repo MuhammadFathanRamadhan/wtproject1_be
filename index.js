@@ -8,7 +8,7 @@ app.use(express.json());
 // Endpoint percobaan (Bisa diakses dari browser atau Flutter)
 app.get('/', (req, res) => {
     res.send({
-        message: "Server Node.js sudah berjalan!",
+        message: "Server Node.js sudah berjalan dari!",
         status: "success"
     });
 });
